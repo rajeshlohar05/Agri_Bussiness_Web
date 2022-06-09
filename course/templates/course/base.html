@@ -1,96 +1,137 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Home{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'course/css/all.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'course/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'course/css/style.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      #tsize {
+        font-size: 300%;
+        font-weight: 900;
+        margin-bottom: 0%;
+        font-family: "Abril Fatface", cursive;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}Home{% endblock title %}</title>
-  <link rel="stylesheet" href="{% static 'course/css/all.min.css' %}">
-  <link rel="stylesheet" href="{% static 'course/css/bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{% static 'course/css/style.css' %}">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
-  <style>
-    #tsize {
-      font-size: 300%;
-      font-weight: 900;
-      margin-bottom: 0%;
-      font-family: 'Abril Fatface', cursive;
-    }
-
-  .navbar-toggler-icon{
-    color:red;
-    background-image: url(https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.iconscout.com%2Ficon%2Ffree%2Fpng-256%2Fopen-menu-3567516-2982579.png&imgrefurl=https%3A%2F%2Ficonscout.com%2Ficon%2Fopen-menu-3567516&tbnid=KrHwWehk3NvvVM&vet=12ahUKEwiHg-fdq574AhWNntgFHTp0AvAQMyghegUIARCXAg..i&docid=O97kQVRyMEW6qM&w=256&h=256&q=red%20image%20of%20menu%20icon&ved=2ahUKEwiHg-fdq574AhWNntgFHTp0AvAQMyghegUIARCXAg);
-    
-  }
-
+      #small {
+        font-size: x-small;
+        font-weight: 700;
+        
+      }
   
-  </style>
-</head>
+    </style>
+  </head>
 
-<body class="">
-  <div class="container-fluid p-0">
-    <header class="row pt-1 pb-1 ">
-      <div class="col-sm-1">
-        <img src="{% static '/course/images/logo_Agri.png' %}" alt="logo" height="110" class="ms-5">
-      </div>
-      <div class="col-xxl-6">
-        <h1 class="mt-xxl-5 ms-xxl-4 text-success" id="tsize">Mukesh Agro Industries</h1>
-      </div>
-    </header>
-    <div class=" container-fluid  bg-success ">
-      <nav class="navbar navbar-expand-lg ">
-        <div class="container-fluid ">
-          <a class="navbar-brand text-light" href="#">Home</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon "></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active text-light" aria-current="page" href="#">Services</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-light" href="#">Location</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button"
-                  data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item " href="#">Action</a></li>
-                  <li><a class="dropdown-item " href="#">Another action</a></li>
-                  <li>
-                    <hr class="dropdown-divider ">
-                  </li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-light">Contact Us</a>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-info " id="searchbutton" type="submit">Search</button>
-            </form>
-          </div>
+  <body>
+    <div class="container-fluid m-0">
+      <header class="row pt-1 pb-1">
+        <div class="col-sm-1">
+          <img
+            src="{% static '/course/images/logo_Agri.png' %}"
+            alt="logo"
+            height="110"
+            class="ms-5"
+          />
         </div>
-      </nav>
+        <div class="col-xxl-6">
+          <h1 class="mt-xxl-5 ms-xxl-4 text-success" id="tsize">
+            Mukesh Agro Industries
+          </h1>
+        </div>
+        <div class="contact-button col-sm-4 offset-sm-1 mt-xxl-5 d-none d-xxl-inline ps-5">
+          <button class="btn btn-primary rounded-pill p-2 me-2">
+            <i class="fa-solid fa-phone-volume me-2 ms-2"></i
+            ><big class="mb-0 me-3">Call +9100000000</big>
+          </button>
+          <button class="btn btn-danger rounded-pill">
+            <i class="fa-solid fa-envelope me-2 ms-2"></i><big class="me-2">SEND EMAIL</big>
+          </button>
+        </div>
+      </header>
+      <div class="bg-success ms-0 me-0">
+        <nav class="navbar navbar-expand-lg mx-0">
+          <div class="container-fluid">
+            <a class="navbar-brand text-light" href="#">Home</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon " id="menu"><i class="fa-solid fa-bars"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active text-light"
+                    aria-current="page"
+                    href="#"
+                    >Services</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light" href="#">About Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle text-light"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Products
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">Seed drill</a></li>
+                    <li><a class="dropdown-item" href="#">Cultivator</a></li>
+                    <li><a class="dropdown-item" href="#">Phough</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-light">Contact Us</a>
+                </li>
+              </ul>
+              <form class="d-flex" role="search">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button
+                  class="btn btn-outline-info"
+                  id="searchbutton"
+                  type="submit"
+                >
+                  Search
+                </button>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </div>
+
     </div>
-
-  </div>
-  <script src="{% static 'course/js/all.min.js' %}"></script>
-  <script src="{% static 'course/js/popper.js' %}"></script>
-  <script src="{% static 'course/js/jQurey.js' %}"></script>
-  <script src="{% static 'course/js/bootstrap.min.js' %}"></script>
-  <script src="{% static 'course/js/script.js' %}"></script>
-</body>
-
+    <script src="{% static 'course/js/all.min.js' %}"></script>
+    <script src="{% static 'course/js/popper.js' %}"></script>
+    <script src="{% static 'course/js/jQurey.js' %}"></script>
+    <script src="{% static 'course/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'course/js/script.js' %}"></script>
+  </body>
 </html>
